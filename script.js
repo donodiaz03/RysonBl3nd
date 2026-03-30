@@ -114,4 +114,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true }); // Mejora el rendimiento del scroll
 });
 
->>>>>>> d0d2bde2335f79fbc9315f52189252a3ff650dbc
+
