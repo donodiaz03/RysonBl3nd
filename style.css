@@ -1,0 +1,128 @@
+:root {
+    --primary: #ffffff;
+    --bg-dark: #0a0a0a;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--primary);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Animaciones de Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero con fondo oscuro y foto local */
+.hero-bg {
+    /* Degradado oscuro (0.7 a 0.95) para asegurar legibilidad y estilo dark */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95)), url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Botón CTA */
+.cta-btn {
+    border: 1px solid white;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Soundcloud wrapper */
+.iframe-wrapper iframe {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para Videos Locales */
+.local-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.local-video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Menú Overlay */
+.menu-link {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+    left: 0;
+    background: #fff;
+}
+
+/* Galería Tabs Activos */
+.gallery-tab.active {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.gallery-tab {
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.gallery-tab:hover {
+    color: white;
+}
+
+/* Glitch effect */
+.glitch-hover:hover {
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+}

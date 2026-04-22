@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RysonBl3nd</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- UI PRINCIPAL -->
+    <main id="main-content">
+
+        <!-- BARRA SUPERIOR -->
+        <header
+            class="fixed top-0 left-0 w-full z-40 py-6 flex justify-center items-center bg-black/20 backdrop-blur-sm border-b border-white/5 transition-all duration-500">
+            <a href="#"
+                class="text-3xl md:text-4xl font-bold tracking-[0.3em] font-oswald text-white hover:opacity-80 transition-opacity">
+                <img src="img/RysonBl3nd (sin fondo).png" alt="DJ ARTIST Logo" class="h-8 md:h-10 inline-block">
+            </a>
+        </header>
+
+        <!-- BOTÓN DE MENÚ FLOTANTE -->
+        <div class="fixed bottom-8 right-8 z-50">
+            <button onclick="toggleMenu()"
+                class="bg-white text-black w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center hover:scale-110 hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] group">
+                <i data-lucide="menu"
+                    class="w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-90"
+                    id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- MENÚ OVERLAY -->
+        <div id="menu-overlay"
+            class="fixed inset-0 bg-black/95 backdrop-blur-md z-40 flex items-center justify-center opacity-0 invisible transition-all duration-500">
+            <div class="flex flex-col gap-6 md:gap-10 text-center">
+                <a href="#bio" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">BIOGRAFÍA</a>
+                <a href="#gallery" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">GALERÍA</a>
+                <a href="#tour" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">PROXIMOS
+                    EVENTOS</a>
+                <a href="#sets" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">DJ
+                    SETS</a>
+                <a href="#merch" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">SIGUEME</a>
+
+                <div class="flex justify-center gap-8 mt-8">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="instagram"
+                            class="w-8 h-8"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="twitter"
+                            class="w-8 h-8"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="youtube"
+                            class="w-8 h-8"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="hero-bg h-screen flex items-center justify-center relative">
+            <div class="text-center px-4 reveal active">
+                <p class="text-sm md:text-lg tracking-[0.8em] mb-4 uppercase text-gray-300">Desde Iztapalapa, para el
+                    mundo</p>
+                <h1
+                    class="text-7xl md:text-[10rem] leading-none font-bold font-oswald text-shadow mb-8 glitch-hover cursor-default">
+                    NEVER STOP<br>REBELING
+                </h1>
+                <div class="flex justify-center gap-4 mt-8">
+                    <a href="#sets"
+                        class="cta-btn bg-white text-black hover:bg-black hover:text-white font-bold font-oswald uppercase">Escucha
+                        mis DJ SETS</a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </div>
+        </section>
+
+        <!-- BIO SECTION -->
+        <section id="bio"
+            class="min-h-screen flex items-center bg-black relative overflow-hidden py-20 border-b border-white/5">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-zinc-900/30 -skew-x-12 hidden md:block"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+                    <div class="w-full md:w-1/2 reveal flex justify-center order-1">
+                        <img src="img/yo.png" alt="DJ Profile"
+                            class="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_40px_rgba(255,255,255,0.1)] rounded-full opacity-90 border-4 border-zinc-800">
+                    </div>
+                    <div class="w-full md:w-1/2 reveal order-2 text-center md:text-left">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-8">MI HISTORIA</h2>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        <p>RysonBl3nd es un DJ y futuro productor mexicano que destaca por su capacidad de dominar la
+                            pista con una curaduría energética que fusiona el Progressive House, Big Room/Techno y
+                            Hardstyle.</p>
+
+                        <p>Con una trayectoria en ascenso, ha dejado huella en plataformas clave como las REVN4RT Street
+                            Sessions (solitario y F2F) y los Open Decks de Omdelu Records (ahora elreiv), además de
+                            sólidas colaboraciones B2B con NAII.</p>
+
+                        <p>Su impacto ha llegado al corazón de la CDMX, presentándose en el Zócalo en eventos de gran
+                            magnitud como el Día del Niño y la Feria del Libro junto al colectivo Star Eyes. Asimismo,
+                            formó parte del concurso de DJ Beat & Huelum del Instituto Politécnico Nacional,
+                            consolidando su presencia dentro de la escena emergente.</p>
+
+                        <p>En constante evolución y con la mira puesta en la producción musical llevando su
+                            sonido de México hacia una proyección
+                            global.</p>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="py-24 bg-zinc-950 relative border-b border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col items-center mb-12 reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">GALERÍA</h2>
+
+                    <!-- Controles de subdivisión -->
+                    <div class="flex gap-8 text-lg md:text-xl font-oswald tracking-widest">
+                        <button onclick="switchGallery('photos')" id="tab-photos"
+                            class="gallery-tab active pb-2 uppercase">Fotos</button>
+                        <button onclick="switchGallery('videos')" id="tab-videos"
+                            class="gallery-tab pb-2 uppercase">Videos</button>
+                    </div>
+                </div>
+
+                <!-- Subdivision: FOTOS LOCALES (Placeholders) -->
+                <div id="gallery-photos" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal">
+                    <!-- Simulación de fotos locales. Reemplaza 'src' con tus rutas locales ej: 'assets/img/foto1.jpg' -->
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/RysonZOCALO.jpg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/Omdelu.jpg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/RysonSS.jpg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/RYSONterraza.jpg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/UTOPIAMIXI.jpeg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/Ryson420.jpeg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/RysonSS26.jpeg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden aspect-square cursor-pointer bg-zinc-900">
+                        <img src="img/RysonIPN.jpg"
+                            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="maximize" class="text-white w-8 h-8"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subdivision: VIDEOS LOCALES (Usando etiqueta <video>) -->
+                <div id="gallery-videos"
+                    class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal justify-items-center">
+                    <!-- Video 1 -->
+                    <div class="local-video-container">
+                        <!-- Reemplaza 'poster' con tu miniatura local y 'src' con tu video local -->
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/exordium.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">EXORDIUM</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">AGOSTO 2024 </p>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/OmdeluR.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">OMDELU RECORDS</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">AGOSTO 2024</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/RYSON.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">TERRAZA UTOPIA IXTAPALCALLI</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">JULIO 2025</p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Video 4 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/RysonUTOPIA.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">AUDITORIO UTOPIA IXTAPALCALLI</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">SEPTIEMBRE 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/RYSON CAPITANGALLO.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">FORO CAPITÁN GALLO</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">MARZO 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 6 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/UTOPIAMIXI.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">UTOPIA MIXIHUCA</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">ABRIL 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 7 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/RYSONRevn4rt.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">REVN4RT STREET SESSIONS</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">ABRIL 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 8 -->
+                    <div class="local-video-container">
+                        <video controls controlsList="nofullscreen" disablePictureInPicture poster="">
+                            <source src="videos/Ryson420.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <div class="p-4">
+                            <h3 class="text-xl font-oswald">ARCO CHINO 4:20</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">ABRIL 2026</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUR DATES SECTION -->
+        <section id="tour" class="py-24 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center reveal">PROXIMOS EVENTOS</h2>
+
+                <div class="max-w-4xl mx-auto space-y-1">
+                    <!-- Date Item 1 -->
+                    <div
+                        class="group relative bg-zinc-900 p-6 md:p-8 hover:bg-zinc-800 transition-all duration-300 cursor-pointer reveal">
+
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div class="text-center md:text-left">
+                                <div class="text-2xl font-bold font-oswald">--</div>
+                                <div class="text-gray-500 text-sm uppercase tracking-widest">--</div>
+                            </div>
+                            <div class="flex-grow md:pl-12 text-center md:text-left">
+                                <h3 class="text-2xl md:text-3xl font-bold">CDMX</h3>
+                                <p class="text-gray-400 uppercase">CIUDAD DE MÉXICO</p>
+                            </div>
+                            <button
+                                class="border border-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                                Flyer
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        </section>
+
+
+
+        <!-- SOUNDCLOUD SECTION -->
+        <section id="sets" class="py-24 bg-zinc-950 relative border-t border-white/5">
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                    <div>
+                        <h2 class="text-4xl md:text-6xl font-bold mb-2">DJ SETS</h2>
+                        <p class="text-gray-400 tracking-widest uppercase">Ultimos mixes via Soundcloud</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <a href="https://soundcloud.com/djrysonbl3nd" target="_blank"
+                            class="flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors font-bold uppercase text-sm tracking-wider">
+                            <i data-lucide="cloud" class="w-5 h-5"></i> Visita mi Soundcloud
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Set 1 -->
+                    <div class="iframe-wrapper reveal">
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2045030729&color=%23491e96&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                        <div
+                            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                            <a href="https://soundcloud.com/djrysonbl3nd" title="RysonBl3nd" target="_blank"
+                                style="color: #cccccc; text-decoration: none;">RysonBl3nd</a> · <a
+                                href="https://soundcloud.com/djrysonbl3nd/rysonbl3nd-mix-progressive-house-big-roomtechno-hardstyle"
+                                title="DJ SET Progressive House, Big Room/Techno &amp; Hardstyle" target="_blank"
+                                style="color: #cccccc; text-decoration: none;">DJ SET Progressive House, Big Room/Techno
+                                &amp; Hardstyle</a>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-xl font-bold font-oswald">DJ SET PROGRESSIVE HOUSE, BIG ROOM/TECHNO &
+                                HARDSTYLE</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Set 2 -->
+                    <div class="iframe-wrapper reveal">
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2186575318&color=%23491e96&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                        <div
+                            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                            <a href="https://soundcloud.com/djrysonbl3nd" title="RysonBl3nd" target="_blank"
+                                style="color: #cccccc; text-decoration: none;">RysonBl3nd</a> · <a
+                                href="https://soundcloud.com/djrysonbl3nd/dj-set-techno-hardstyle"
+                                title="DJ SET Big Room/Techno Hardstyle" target="_blank"
+                                style="color: #cccccc; text-decoration: none;">DJ SET Big Room/Techno Hardstyle</a>
+                        </div>
+                        <div class="mt-2">
+                            <h3 class="text-xl font-bold font-oswald">DJ SET BIG ROOM/TECHNO & HARDSTYLE</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">2025</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MERCH SECTION -->
+        <section id="merch" class="h-[60vh] relative flex items-center justify-center bg-fixed bg-center bg-cover"
+            style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center reveal">
+                <h2 class="text-4xl font-bold mb-2 text-gray-200">SIGUEME</h2>
+                <p class="text-6xl font-oswald font-bold mb-8 text-white">EN TODAS MIS REDES</p>
+                <a href="https://linktr.ee/rysonbl3nd?utm_source=linktree_profile_share&ltsid=6cdd4094-0b02-4424-87b7-afdeddf462d5"
+                    class="cta-btn bg-black border-black text-white hover:bg-white hover:text-black font-oswald">LINKTREE</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-zinc-950 pt-20 pb-10 border-t border-zinc-900">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                    <!-- Newsletter -->
+                    <div class="col-span-1 md:col-span-2">
+                        <h3 class="font-oswald text-xl mb-6">JOIN THE NEWSLETTER</h3>
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="YOUR EMAIL ADDRESS"
+                                class="bg-transparent border border-zinc-700 p-4 w-full text-white focus:border-white outline-none transition-colors">
+                            <button
+                                class="bg-white text-black font-bold px-8 py-4 hover:bg-gray-200 transition-colors uppercase tracking-widest">
+                                Join
+                            </button>
+                        </form>
+                        <p class="text-xs text-gray-500 mt-4">By signing up you agree to our Privacy Policy.</p>
+                    </div>
+
+                    <!-- Links 1 -->
+                    <div>
+                        <h3 class="font-oswald text-xl mt-8 mb-6 text-gray-400">CORREO ELECTRÓNICO</h3>
+                        <p class="font-bold text-lg mb-1">rysonb3@gmail.com</p>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="flex flex-col justify-start">
+                        <h3 class="font-oswald text-xl mb-6 text-gray-400">SIGUEME</h3>
+                        <div class="flex gap-6">
+                            <a href="https://www.instagram.com/rysonbl3nd/"
+                                class="hover:text-gray-400 transition-transform hover:scale-110"><i
+                                    data-lucide="instagram" class="w-6 h-6"></i></a>
+
+                            <a href="https://www.facebook.com/djrysonbl3nd"
+                                class="hover:text-gray-400 transition-transform hover:scale-110"><i
+                                    data-lucide="facebook" class="w-6 h-6"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
+                    <p>&copy; 2026 RysonBl3nd.</p>
+                    <p> Desarrollado por Donovan Eduardo Contreras Diaz</p>
+                    <div class="flex gap-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                        <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
