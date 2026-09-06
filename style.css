@@ -32,11 +32,45 @@ h3,
 
 /* Hero con fondo oscuro y foto local */
 .hero-bg {
-    /* Degradado oscuro (0.7 a 0.95) para asegurar legibilidad y estilo dark */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95)), url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop');
+    /* Degradado oscuro para asegurar la legibilidad del logo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95)), url('img/fondo banner.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.hero-logo-wrap {
+    display: flex;
+    justify-content: center;
+    width: min(88vw, 1100px);
+}
+
+.hero-logo {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.25));
+    animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%,
+    100% {
+        opacity: 0.86;
+        transform: scale(0.98);
+        filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.18));
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 34px rgba(255, 255, 255, 0.6));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo {
+        animation: none;
+    }
 }
 
 /* Botón CTA */
@@ -120,6 +154,83 @@ h3,
 
 .gallery-tab:hover {
     color: white;
+}
+
+/* Presentaciones */
+.experience-section {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 45%);
+}
+
+.experience-kicker,
+.experience-count {
+    color: #a1a1aa;
+}
+
+.experience-count {
+    line-height: 1;
+    opacity: 0.45;
+}
+
+.experience-list {
+    border-top: 1px solid #3f3f46;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #27272a;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.experience-item:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.experience-number {
+    color: #71717a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+}
+
+.experience-item h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.experience-item p {
+    margin-top: 0.3rem;
+    color: #a1a1aa;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.experience-item p span {
+    color: #52525b;
+    padding: 0 0.35rem;
+}
+
+@media (max-width: 640px) {
+    .experience-item {
+        grid-template-columns: 2rem 1fr;
+        gap: 0.75rem;
+    }
+
+    .experience-item h3 {
+        line-height: 1.15;
+    }
+
+    .experience-item p {
+        letter-spacing: 0.1em;
+    }
 }
 
 /* Glitch effect */

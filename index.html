@@ -25,15 +25,6 @@
     <!-- UI PRINCIPAL -->
     <main id="main-content">
 
-        <!-- BARRA SUPERIOR -->
-        <header
-            class="fixed top-0 left-0 w-full z-40 py-6 flex justify-center items-center bg-black/20 backdrop-blur-sm border-b border-white/5 transition-all duration-500">
-            <a href="#"
-                class="text-3xl md:text-4xl font-bold tracking-[0.3em] font-oswald text-white hover:opacity-80 transition-opacity">
-                <img src="img/RysonBl3nd (sin fondo).png" alt="DJ ARTIST Logo" class="h-8 md:h-10 inline-block">
-            </a>
-        </header>
-
         <!-- BOTÓN DE MENÚ FLOTANTE -->
         <div class="fixed bottom-8 right-8 z-50">
             <button onclick="toggleMenu()"
@@ -50,6 +41,8 @@
             <div class="flex flex-col gap-6 md:gap-10 text-center">
                 <a href="#bio" onclick="toggleMenu()"
                     class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">BIOGRAFÍA</a>
+                <a href="#experience" onclick="toggleMenu()"
+                    class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">EXPERIENCIA</a>
                 <a href="#gallery" onclick="toggleMenu()"
                     class="menu-link text-4xl md:text-7xl font-oswald font-bold text-white hover:text-gray-300 transition-all tracking-tighter">GALERÍA</a>
                 <a href="#tour" onclick="toggleMenu()"
@@ -74,18 +67,8 @@
 
         <!-- HERO SECTION -->
         <section class="hero-bg h-screen flex items-center justify-center relative">
-            <div class="text-center px-4 reveal active">
-                <p class="text-sm md:text-lg tracking-[0.8em] mb-4 uppercase text-gray-300">Desde Iztapalapa, para el
-                    mundo</p>
-                <h1
-                    class="text-7xl md:text-[10rem] leading-none font-bold font-oswald text-shadow mb-8 glitch-hover cursor-default">
-                    NEVER STOP<br>REBELING
-                </h1>
-                <div class="flex justify-center gap-4 mt-8">
-                    <a href="#sets"
-                        class="cta-btn bg-white text-black hover:bg-black hover:text-white font-bold font-oswald uppercase">Escucha
-                        mis DJ SETS</a>
-                </div>
+            <div class="hero-logo-wrap reveal active">
+                <img src="img/LOGO sin fondo.png" alt="RysonBl3nd" class="hero-logo">
             </div>
 
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
@@ -100,30 +83,108 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
                     <div class="w-full md:w-1/2 reveal flex justify-center order-1">
-                        <img src="img/yo.png" alt="DJ Profile"
+                        <img src="img/yo.jpg" alt="DJ Profile"
                             class="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_40px_rgba(255,255,255,0.1)] rounded-full opacity-90 border-4 border-zinc-800">
                     </div>
                     <div class="w-full md:w-1/2 reveal order-2 text-center md:text-left">
                         <h2 class="text-4xl md:text-6xl font-bold mb-8">MI HISTORIA</h2>
                         <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                        <p>RysonBl3nd es un DJ y futuro productor mexicano que destaca por su capacidad de dominar la
-                            pista con una curaduría energética que fusiona el Progressive House, Big Room/Techno,
-                            Hardstyle y Hardtechno</p>
-
-                        <p>Con una trayectoria en ascenso, ha dejado huella en plataformas clave como las REVN4RT Street
-                            Sessions (solitario y F2F) y los Open Decks de Omdelu Records (ahora elreiv), además de
-                            sólidas colaboraciones B2B con NAII.</p>
-
-                        <p>Su impacto ha llegado al corazón de la CDMX, presentándose en el Zócalo en eventos de gran
-                            magnitud como el Día del Niño y la Feria del Libro junto al colectivo Star Eyes. Asimismo,
-                            formó parte del concurso de DJ Beat & Huelum del Instituto Politécnico Nacional,
-                            consolidando su presencia dentro de la escena emergente.</p>
-
-                        <p>En constante evolución y con la mira puesta en la producción musical llevando su
-                            sonido de México hacia una proyección
-                            global.</p>
+                        <p>
+                            <strong>RysonBl3nd</strong> es un DJ mexicano de música electrónica con una propuesta energética que fusiona 
+                            <strong>Progressive House, Big Room, Techno, Hardstyle y Hardtechno.</strong>
                         </p>
 
+                        <p>
+                            Su trayectoria incluye presentaciones en <strong>WARRIORMANIA FESTIVAL</strong> junto a 
+                            <strong>Mad Warriors</strong>, el <strong>Zócalo de la CDMX</strong> con <strong>Star Eyes</strong> 
+                            y las <strong>REVN4RT Street Sessions</strong>, además de participaciones en Open Decks, sesiones B2B 
+                            y concurso de DJ.
+                        </p>
+
+                        <p>
+                            Actualmente continúa expandiendo su proyecto trabajando en el siguiente paso de su evolución artística: 
+                            <strong>la producción musical y la creación de un sonido propio.</strong>
+                        </p>
+
+                        <p>
+                            <strong>Desde México hacia el mundo. 🌎⚡</strong>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="experience-section py-24 bg-zinc-950 relative border-b border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto reveal">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div>
+                            <p class="experience-kicker font-oswald uppercase tracking-[0.35em] text-sm mb-4">En el booth y frente a la pista</p>
+                            <h2 class="text-4xl md:text-6xl font-bold">EXPERIENCIA /<br> PRESENTACIONES</h2>
+                        </div>
+                        <span class="experience-count font-oswald text-5xl md:text-6xl" aria-hidden="true">08</span>
+                    </div>
+
+                    <div class="experience-list">
+                        <article class="experience-item">
+                            <span class="experience-number">01</span>
+                            <div>
+                                <h3>⚔️ WARRIORMANIA FESTIVAL</h3>
+                                <p>Mad Warriors <span>·</span> 2026</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">02</span>
+                            <div>
+                                <h3>🔥 LA SANTI</h3>
+                                <p>Dark Legions <span>·</span> 2026</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">03</span>
+                            <div>
+                                <h3>📍 ZÓCALO CDMX</h3>
+                                <p>Día del Niño / FERIA DEL LIBRO <span>·</span> Star Eyes Festival</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">05</span>
+                            <div>
+                                <h3>🎧 REVN4RT STREET SESSIONS</h3>
+                                <p>REVN4RT / NIUR4VERS</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">06</span>
+                            <div>
+                                <h3>🎛️ CHELO'S TERRAZA</h3>
+                                <p>Kalli Rekords
+                                </p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">06</span>
+                            <div>
+                                <h3>🎛️ OPEN DECKS</h3>
+                                <p>Omdelu Records (ahora elreiv)</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">07</span>
+                            <div>
+                                <h3>🔊 BEAT &amp; HUELUM</h3>
+                                <p>INSTITUTO POLITÉCNICO NACIONAL <span>·</span> Concurso DJ</p>
+                            </div>
+                        </article>
+                        <article class="experience-item">
+                            <span class="experience-number">08</span>
+                            <div>
+                                <h3>🤝 B2B SESSIONS</h3>
+                                <p>NAII</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
